@@ -1,6 +1,5 @@
 import React from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-
 const App = () => {
   const {
     transcript,
@@ -12,24 +11,17 @@ const App = () => {
   const startListening = () => {
     SpeechRecognition.startListening({ continuous: true, language: 'es-AR' });
   }
-  var count = 0;
-  var palabras = transcript.split(" ");
-  var indicePalabra = palabras.indexOf("boludo");
-  var palabra = palabras[indicePalabra];
-  console.log(palabra);
-  var audio = document.getElementById("audio");
-  if (SpeechRecognition.startListening) {
-    for (var i = 0; i < palabras.length; i++) {
-      if (palabras[i] === "boludo" || palabras[i] === "boludear") {
-        audio.play();
-        count++;
+  let palabras = interimTranscript.split(" ");
+  let count = (transcript.match(/boludo/g) || []).length;
+  console.log("boludos-transcript-"+count);
+  
+  let audio = document.getElementById("audio");
+  if (listening === true) {
+    for (let i = 0; i < palabras.length; i++) {
+      if ((palabras[i] === "boludo")) {
+        audio.play(); 
       }
     }
-  }
-
-  if (!SpeechRecognition.startListening) {
-    audio.pause();
-
   }
 
   if (!browserSupportsSpeechRecognition) {
@@ -44,7 +36,6 @@ const App = () => {
       <p>{transcript}</p>
       <p>{interimTranscript}</p>
       <p>Contador de boludos: {count}</p>
-      <p>{palabra}</p>
       <audio id="audio" controls>
         <source type="audio/mp3" src="/dijiste-boludo.mp3"></source>
       </audio>
