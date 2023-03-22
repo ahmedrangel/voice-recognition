@@ -22,7 +22,7 @@ const App = () => {
     for (var i = 0; i < palabras.length; i++) {
       if (palabras[i] === "boludo" || palabras[i] === "boludear") {
         var audio_start = document.getElementById("audio");
-        audio.play();
+        audio_start.play();
         count++;
       }
     }
@@ -30,7 +30,7 @@ const App = () => {
 
   if (SpeechRecognition.stopListening) {
     var audio_stop = document.getElementById("audio");
-    audio.pause();
+    audio_stop.pause();
 
   }
 
