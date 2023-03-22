@@ -39,7 +39,7 @@ const App = () => {
       <p>Contador de boludos: {count}</p>
       <p>{palabra}</p>
       <audio id="audio" controls>
-        <source type="audio/mp3" src="%PUBLIC_URL%/dijiste-boludo.mp3"></source>
+        <source type="audio/mp3" src="./dijiste-boludo.mp3"></source>
       </audio>
     </div>
   );
