@@ -18,7 +18,7 @@ const App = () => {
   var palabra = palabras[indicePalabra];
 
   for (var i = 0; i < palabras.length; i++) {
-    if (palabras[i] === "boludo") {
+    if (palabras[i] === "boludo" || palabras[i] === "boludos") {
       count++;
     }
   }
@@ -34,7 +34,7 @@ const App = () => {
       <button onClick={resetTranscript}>Reset</button>
       <p>{transcript}</p>
       <p>{interimTranscript}</p>
-      <p>{count}</p>
+      <p>Contador de boludos: {count}</p>
       <p>{palabra}</p>
     </div>
   );
