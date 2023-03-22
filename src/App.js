@@ -19,6 +19,8 @@ const App = () => {
 
   for (var i = 0; i < palabras.length; i++) {
     if (palabras[i] === "boludo" || palabras[i] === "boludos") {
+      var audio = document.getElementById("audio");
+      audio.play();
       count++;
     }
   }
@@ -36,6 +38,9 @@ const App = () => {
       <p>{interimTranscript}</p>
       <p>Contador de boludos: {count}</p>
       <p>{palabra}</p>
+      <audio id="audio" controls>
+        <source type="audio/mp3" src="./mp3/dijiste-boludo.mp3"></source>
+      </audio>
     </div>
   );
 };
