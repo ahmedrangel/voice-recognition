@@ -16,12 +16,15 @@ const App = () => {
   var palabras = transcript.split(" ");
   var indicePalabra = palabras.indexOf("boludo");
   var palabra = palabras[indicePalabra];
+  console.log(palabra);
 
-  for (var i = 0; i < palabras.length; i++) {
-    if (palabras[i] === "boludo" || palabras[i] === "boludos") {
-      var audio = document.getElementById("audio");
-      audio.play();
-      count++;
+  if (SpeechRecognition.startListening) {
+    for (var i = 0; i < palabras.length; i++) {
+      if (palabras[i] === "boludo" || palabras[i] === "boludear") {
+        var audio = document.getElementById("audio");
+        audio.play();
+        count++;
+      }
     }
   }
 
