@@ -28,6 +28,12 @@ const App = () => {
     }
   }
 
+  if (SpeechRecognition.stopListening) {
+    var audio = document.getElementById("audio");
+    audio.pause();
+
+  }
+
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }
