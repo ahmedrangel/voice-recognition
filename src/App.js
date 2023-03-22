@@ -42,7 +42,7 @@ const App = () => {
       <button onClick={startListening}>Start</button>
       <button onClick={SpeechRecognition.stopListening}>Stop</button>
       <button onClick={resetTranscript}>Reset</button>
-      <p class="my-2">Contador: {count}</p>
+      <p class="my-2">Contador de boludos: {count}</p>
       <div id="transcript" class="m-3 p-4">{transcript}</div>
       <p id="interim" class="mx-3"><i>{interim}</i></p>
       <audio id="audio" controls>
