@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #121212;
+  color: #f1f1f1;
 }
 
 code {
@@ -15,4 +17,14 @@ code {
 
 #audio {
   display: none;
+}
+
+#interim {
+  color: #bbbbbb;
+}
+
+#transcript {
+  background: #f5f5f5;
+  color: #000;
+  border: solid 10px #555555;
 }
