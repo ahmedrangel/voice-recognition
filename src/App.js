@@ -17,20 +17,18 @@ const App = () => {
   var indicePalabra = palabras.indexOf("boludo");
   var palabra = palabras[indicePalabra];
   console.log(palabra);
-
+  var audio = document.getElementById("audio");
   if (SpeechRecognition.startListening) {
     for (var i = 0; i < palabras.length; i++) {
       if (palabras[i] === "boludo" || palabras[i] === "boludear") {
-        var audio_start = document.getElementById("audio");
-        audio_start.play();
+        audio.play();
         count++;
       }
     }
   }
 
-  if (SpeechRecognition.stopListening) {
-    var audio_stop = document.getElementById("audio");
-    audio_stop.pause();
+  if (!SpeechRecognition.startListening) {
+    audio.pause();
 
   }
 
